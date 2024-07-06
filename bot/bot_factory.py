@@ -56,6 +56,9 @@ def create_bot(bot_type):
     elif bot_type == const.GEMINI:
         from bot.gemini.google_gemini_bot import GoogleGeminiBot
         return GoogleGeminiBot()
+    elif bot_type == const.GEMINI_REST:
+        from bot.gemini_rest.google_gemini_rest_bot import GoogleGeminiRestBot
+        return GoogleGeminiRestBot()
 
     elif bot_type == const.ZHIPU_AI:
         from bot.zhipuai.zhipuai_bot import ZHIPUAIBot

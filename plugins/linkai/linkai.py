@@ -270,7 +270,7 @@ def _send_info(e_context: EventContext, content: str):
 
 
 def _find_user_id(context):
-    if context["isgroup"]:
+    if context.get("isgroup", False):
         return context.kwargs.get("msg").actual_user_id
     else:
         return context["receiver"]
