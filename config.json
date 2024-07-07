@@ -1,6 +1,6 @@
 {
   "channel_type": "wx",
-  "model": "gemini-1.5-pro-latest",
+  "model": "gemini-1.5-flash",
   "bot_type": "gemini_rest",
   "gemini_api_key": "AIzaSyCeZniX2CJHBJwdp4zH_ltouk2uJpF8gDE",
   "open_ai_api_key": "AIzaSyCeZniX2CJHBJwdp4zH_ltouk2uJpF8gDE",
@@ -15,7 +15,7 @@
     "bot",
     "@bot"
   ],
-  "single_chat_reply_prefix": "[bot, 小万] ",
+  "single_chat_reply_prefix": "",
   "group_chat_prefix": [
     "@bot",
     "小万，",
