@@ -49,7 +49,10 @@ class GoogleGeminiRestBot(GoogleGeminiBot):
             }
             response = requests.post(url, headers=headers, data=json.dumps(payload))
             if response.status_code == 200:
-                return Reply(ReplyType.TEXT, response.json()["candidates"][0]["content"]["parts"][0]["text"])
+                reply_text = response.json()["candidates"][0]["content"]["parts"][0]["text"]
+                self.sessions.session_reply(reply_text, session_id)
+                logger.info(f"[Gemini] reply={reply_text}")
+                return Reply(ReplyType.TEXT, reply_text)
             else:
                 logger.error(response.json())
                 raise Exception(response.status_code)
